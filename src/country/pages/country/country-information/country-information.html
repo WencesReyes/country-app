@@ -1,0 +1,31 @@
+<div class="hero bg-base-200">
+  <div class="hero-content flex-col lg:flex-row-reverse">
+    <img [src]="country().flagSvg" class="max-w-sm rounded-lg shadow-2xl" />
+    <div>
+      <h1 class="text-5xl font-bold">{{ country().name }}</h1>
+      <h3 class="text-xl font-bold">Capital: {{ country().capital }}</h3>
+      <p class="py-6">Pablación: {{ country().population | number }}</p>
+      <button (click)="goBack()" class="btn btn-primary">Regresar</button>
+    </div>
+  </div>
+</div>
+
+<section class="stats shadow flex flex-col md:flex-row lg:flex-row mt-5">
+  <div class="stat place-items-center">
+    <div class="stat-title">País</div>
+    <div class="stat-value">{{ country().name }}</div>
+    <div class="stat-desc">Capital: {{ country().capital }}</div>
+  </div>
+
+  <div class="stat place-items-center">
+    <div class="stat-title">Población</div>
+    <div class="stat-value text-secondary">{{ country().population | number }}</div>
+    <div class="stat-desc text-secondary">Al {{ currentYear }}</div>
+  </div>
+
+  <div class="stat place-items-center">
+    <div class="stat-title">Región</div>
+    <div class="stat-value">{{ country().region }}</div>
+    <div class="stat-desc">Subregión: {{ country().subRegion }}</div>
+  </div>
+</section>

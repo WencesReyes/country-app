@@ -1,1 +1,11 @@
-<p>country works!</p>
+@if (countryResource.error()) {
+  <app-error [message]="'No se encontró país'" />
+}
+
+@if (countryResource.isLoading()) {
+  <p>Cargando información ...</p>
+}
+
+@if (countryResource.hasValue()) {
+  <app-country-information [country]="countryResource.value()" />
+}

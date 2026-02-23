@@ -1,3 +1,11 @@
-<app-country-search placeholder="Buscar por capital" (searchInputChanged)="onSearch($event)" />
+<app-country-search
+  placeholder="Buscar por capital"
+  (searchInputChanged)="searchValue.set($event)"
+/>
 
-<app-country-table />
+<app-country-table
+  [countries]="tableState().countries"
+  [isEmpty]="tableState().isEmpty"
+  [errorMessage]="tableState().error"
+  [isLoading]="tableState().isLoading"
+/>
