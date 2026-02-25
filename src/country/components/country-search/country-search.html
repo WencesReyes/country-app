@@ -5,7 +5,8 @@
     [placeholder]="placeholder()"
     autofocus
     #searchInput
-    (keyup.enter)="onSearchInputChanged(searchInput.value)"
+    (keyup)="onSearchInputChanged(searchInput.value)"
+    [value]="inputValue()"
   />
 
   <button class="btn btn-primary" (click)="onSearchInputChanged(searchInput.value)">Buscar</button>

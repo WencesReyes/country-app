@@ -1,4 +1,8 @@
-<app-country-search placeholder="Buscar por país" (searchInputChanged)="searchValue.set($event)" />
+<app-country-search
+  placeholder="Buscar por país"
+  (searchInputChanged)="searchValue.set($event)"
+  [initialValue]="queryParam"
+/>
 
 <app-country-table
   [countries]="tableState().countries"

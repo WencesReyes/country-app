@@ -1,6 +1,8 @@
 <app-country-search
   placeholder="Buscar por capital"
   (searchInputChanged)="searchValue.set($event)"
+  [debounceTime]="500"
+  [initialValue]="queryParam"
 />
 
 <app-country-table
